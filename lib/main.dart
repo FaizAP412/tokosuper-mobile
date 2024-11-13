@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tokosuper/menu.dart';
+import 'package:tokosuper/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());

@@ -60,3 +60,98 @@
     - Membuat file `menu.dart` untuk menampilkan layout homepage.
     - Membuat widget yang dibutuhkan  seperti `InfoCard` dan `GridView` untuk menampilkan tombol.
     - Menambahkan `Snackbar` untuk menampilkan tulisan sesuai dengan tombol yang diklik
+
+# Tugas 8
+ 1. Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
+
+    `const` di Flutter digunakan untuk mendeklarasikan nilai-nilai konstan yang tidak berubah selama runtime. Keuntungan utamanya adalah efisiensi memori dan performa, karena nilai-nilai konstan dihitung saat kompilasi dan objek `const` hanya dibuat sekali dan dapat digunakan kembali. Gunakan `const` untuk widget statis dan nilai tetap. Hindari `const` jika nilai atau objek perlu berubah selama runtime.
+
+ 2. Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+
+    `Column` dan `Row` adalah widget layout di Flutter yang digunakan untuk mengatur tata letak anak-anak widget secara vertikal dan horizontal. `Column` menempatkan anak-anak widget dalam satu kolom vertikal, sedangkan `Row` menempatkan anak-anak widget dalam satu baris horizontal.
+
+    Contoh implementasi `Column`:
+    ```
+    Column(
+        children: <Widget>[
+            Text('Item 1'),
+            Text('Item 2'),
+            Text('Item 3'),
+        ],
+    )
+    ```
+
+    Contoh implementasi `Row`:
+    ```
+    Row(
+        children: <Widget>[
+            Text('Item 1'),
+            Text('Item 2'),
+            Text('Item 3'),
+        ],
+    )
+    ```
+ 3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+
+    Pada halaman form yang saya buat, elemen input yang digunakan antara lain:
+    - `TextField` untuk input teks.
+    - `DropdownButton` untuk memilih opsi dari daftar.
+    - `Checkbox` untuk memilih opsi biner.
+    - `Radio` untuk memilih satu opsi dari beberapa pilihan.
+
+    Elemen input Flutter lain yang tidak saya gunakan pada tugas ini termasuk:
+    - `Slider` untuk memilih nilai dari rentang tertentu.
+    - `Switch` untuk memilih antara dua status (on/off).
+    - `DatePicker` untuk memilih tanggal.
+    - `TimePicker` untuk memilih waktu.
+
+    Elemen-elemen ini tidak digunakan karena tidak sesuai dengan kebutuhan form yang saya buat. Namun, mereka dapat digunakan dalam situasi yang memerlukan input spesifik seperti memilih tanggal atau waktu, atau mengatur nilai dalam rentang tertentu.
+
+ 4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+
+    Untuk mengatur tema dalam aplikasi Flutter agar konsisten, saya menggunakan `ThemeData` di dalam `MaterialApp`. `ThemeData` memungkinkan kita untuk mendefinisikan warna, font, dan gaya visual lainnya yang akan diterapkan secara konsisten di seluruh aplikasi.
+
+    Contoh implementasi tema:
+    ```
+    MaterialApp(
+        theme: ThemeData(
+            primarySwatch: Colors.blue,
+            textTheme: TextTheme(
+            bodyText1: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            bodyText2: TextStyle(fontSize: 16.0),
+            ),
+        ),
+        home: MyHomePage(),
+    );
+    ```
+
+ 5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+
+    Untuk menangani navigate dalam aplikasi dengan banyak halaman pada flutter, kita bisa menggunakan `Navigator` dan `Route`
+    
+    Contoh implementasi `Navigator`
+    ```
+    // Navigasi ke halaman baru
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HalamanBaru()),
+    );
+
+    // Kembali ke halaman sebelumnya
+    Navigator.pop(context);
+    ```
+
+    Contoh implementasi `Route`
+    ```
+    MaterialApp(
+        initialRoute: '/',
+        routes: {
+            '/': (context) => HalamanUtama(),
+            '/halamanBaru': (context) => HalamanBaru(),
+        },
+        );
+
+    // Navigasi menggunakan named route
+    Navigator.pushNamed(context, '/halamanBaru');
+    ```
+
