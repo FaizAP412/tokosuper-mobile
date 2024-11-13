@@ -95,15 +95,15 @@
 
     Pada halaman form yang saya buat, elemen input yang digunakan antara lain:
     - `TextField` untuk input teks.
-    - `DropdownButton` untuk memilih opsi dari daftar.
-    - `Checkbox` untuk memilih opsi biner.
-    - `Radio` untuk memilih satu opsi dari beberapa pilihan.
 
     Elemen input Flutter lain yang tidak saya gunakan pada tugas ini termasuk:
     - `Slider` untuk memilih nilai dari rentang tertentu.
     - `Switch` untuk memilih antara dua status (on/off).
     - `DatePicker` untuk memilih tanggal.
     - `TimePicker` untuk memilih waktu.
+    - `DropdownButton` untuk memilih opsi dari daftar.
+    - `Checkbox` untuk memilih opsi biner.
+    - `Radio` untuk memilih satu opsi dari beberapa pilihan.
 
     Elemen-elemen ini tidak digunakan karena tidak sesuai dengan kebutuhan form yang saya buat. Namun, mereka dapat digunakan dalam situasi yang memerlukan input spesifik seperti memilih tanggal atau waktu, atau mengatur nilai dalam rentang tertentu.
 
