@@ -155,3 +155,37 @@
     Navigator.pushNamed(context, '/halamanBaru');
     ```
 
+# Tugas 9
+
+1. Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
+
+    Membuat model untuk pengambilan atau pengiriman data JSON penting karena model membantu dalam memetakan struktur data JSON ke dalam objek Dart. Ini memudahkan pengelolaan data, validasi, dan manipulasi. Tanpa model, kita harus mengelola data secara manual, yang rentan terhadap kesalahan dan membuat kode sulit dibaca dan dipelihara. Meskipun tidak selalu menyebabkan error, tidak menggunakan model dapat meningkatkan risiko bug dan inkonsistensi data.
+
+    Model digunakan untuk mengambil dan mengirimkan data JSON, model akan membantu untuk memetakan struktur data JSON ke dalam objek Dart, ini akan memudahkan pengelolaan data, validasi, dan manipulasi. Jika tidak menggunakan model, maka kita harus mengelola data secara manual, yang rentan terhadap kesalahan dan membuat kode sulit untuk dikelola. Meskipun tidak selalu menyebabkan error, tidak menggunakan model dapat meningkatkan risiko bug dan inkonsistensi data.
+
+2. Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini
+
+    Library `http` digunakan untuk melakukan permintaan HTTP seperti GET, POST, PUT, dan DELETE. Ini memungkinkan aplikasi Flutter untuk berkomunikasi dengan server, mengambil data dari API, dan mengirim data ke server. Library ini menyediakan cara yang mudah dan efisien untuk menangani permintaan jaringan dalam aplikasi Flutter.
+
+3. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+
+    `CookieRequest` adalah kelas yang digunakan untuk mengirimkan cookie bersama dengan permintaan HTTP. CookieRequest digunakan untuk menyimpan cookie yang diperlukan untuk autentikasi atau penggunaan lainnya.
+
+4. Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
+
+    Mekanisme pengiriman data dilakukan ketika pengguna melakukan input pada form flutter. Data yang diinput kemudian dikonversi menjadi JSON dan dikirim ke server menggunakan permintaan HTTP (misalnya, POST). Server menerima data, memprosesnya, dan mengirimkan respons kembali dalam format JSON. Aplikasi Flutter menerima respons ini, menguraikan JSON menjadi objek.
+
+5. Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+
+    Autentikasi digunkaan dimulai ketika pengguna memasukkan data akun (username dan password) pada halaman login di flutter. Kemudian, data ini dikirim ke server Django untuk memverifikasi kredensial dan, jika valid, mengirimkan respons yang berisi token atau cookie sesi. Setelah itu, Flutter menyimpan token atau cookie untuk melakukan permintaan berikutnya. Saat logout, flutter akan mengirimkan permintaan logout ke Django, dan sesi pegguna akan dihapus. Setelah autentikasi berhasil, Flutter akan menampilkan menu atau halaman login.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+
+    - Menambahkan aplikasi baru pada Django yang bernama `authentication` serta membuat fungsi untuk melakukan login, logout, register.
+    - Mengkonfigurasi aplikasi untuk menggunakan autentikasi dengan menggunakan `django.contrib.auth`.
+    - Membuat model `ProductEntry` untuk bisa menerima data JSON yang dikirim oleh Django
+    - Menambahkan library `http` untuk melakukan permintaan HTTP, `provider` untuk mengelola state, dan `pbp_django_auth` untuk mengelola autentikasi.
+    - Membuat halaman login, logout, register dengan menggunakan `provider` untuk mengelola state.
+    - Menggunakan `http` untuk mengirimkan data ke server Django dan menerima respons.
+    - Mmebuat halaman daftar produk untuk menampilkan data yang diterima dari server Django.
+    - Mengkonfigurasi halaman form untuk bisa mengirimkan data JSON.
